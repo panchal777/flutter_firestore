@@ -38,6 +38,20 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+
+    flavorDimensions "env"
+    productFlavors {
+        dev {
+            dimension "env"
+            applicationId "com.mobile.dev"
+            resValue "string", "app_name", "Firestore DEV"
+        }
+        prod {
+            dimension "env"
+            applicationId "com.mobile.prod"
+            resValue "string", "app_name", "Firestore PROD"
+        }
+    }
 }
 
 flutter {
